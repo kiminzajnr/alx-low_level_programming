@@ -1,22 +1,22 @@
 #include <stdio.h>
 
 /**
- * main - print 00 to 99
+ * main - print alphabet except q and e
  *
  * Return: zero
  */
 int main(void)
 {
 	char ch;
-	char i;
-	char j;
 
-	for (ch = 'a'; ch <= 'd'; ch++)
+	for (ch = 'a'; ch <= 'z'; ch++)
+	{
+		if (ch == 'e' || ch == 'q')
+		{
+			continue;
+		}
 		putchar(ch);
-	for (i = 'f'; i <= 'p'; i++)
-		putchar(i);
-	for (j = 'r'; j <= 'z'; j++)
-		putchar(j);
+	}
 	putchar('\n');
 	return (0);
 }
