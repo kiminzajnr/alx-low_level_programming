@@ -21,7 +21,7 @@ void print_triangle(int size)
 				_putchar('#');
 			}
 		}
-		if ((i+1) == size)
+		if ((i + 1) == size)
 		{
 			break;
 		}
