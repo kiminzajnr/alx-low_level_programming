@@ -1,3 +1,4 @@
+#include "holberton.h"
 /**
  * _strcmp - compares two strings.
  *
@@ -19,11 +20,5 @@ int _strcmp(char *s1, char *s2)
 		i++;
 	}
 	result = s1[i] - s2[i];
-	if (result < 0)
-		return (-15);
-	else if (result > 0)
-		return (15);
-	else
-		return (0);
-	return (0);
+	return (result);
 }
