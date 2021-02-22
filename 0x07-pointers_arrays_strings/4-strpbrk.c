@@ -1,5 +1,6 @@
 #include "holberton.h"
 #include <stdio.h>
+#include <string.h>
 
 /**
  * *_strpbrk - searches a string for any of a set of bytes.
@@ -10,23 +11,15 @@
  */
 char *_strpbrk(char *s, char *accept)
 {
-	char *stringChars = NULL;
-
-	if (s == NULL || accept == NULL)
+	if ((s == NULL) || (accept == NULL))
 	{
 		return (NULL);
 	}
-
-	while (*s != '\0')
+	while (*s)
 	{
-		stringChars = accept;
-		while (*stringChars != '\0')
-		{
-			if (*s == *stringChars)
-				return (s);
-			stringChars++;
-		}
+		if (strchr(accept, *s))
+			return (s);
 		s++;
 	}
-	return (s);
+	return (NULL);
 }
