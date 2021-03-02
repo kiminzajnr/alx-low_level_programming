@@ -13,7 +13,7 @@
 char *_strdup(char *str)
 {
 	int str_size;
-	char *copy;
+	static char *copy;
 	char *copy_offset;
 
 	/* allocating memory for the copy */
