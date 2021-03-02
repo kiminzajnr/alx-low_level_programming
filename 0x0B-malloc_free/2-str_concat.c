@@ -16,6 +16,9 @@ char *str_concat(char *s1, char *s2)
 
 	n = string_length(s1) + string_length(s2) + 1;
 	new_str = malloc(sizeof(char) * n);
+	/* check if null is passed */
+	if (new_str == NULL)
+		return ("");
 
 	/* insert s1 into the new string */
 	while (s1[i] != '\0')
