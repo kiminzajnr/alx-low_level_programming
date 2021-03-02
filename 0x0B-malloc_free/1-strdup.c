@@ -8,7 +8,7 @@
  *
  * @str: string.
  * Return: NULL if str = NULL or insufficient memory, if success return
- * pointer to duplicateds tring.
+ * pointer to duplicated string.
  */
 char *_strdup(char *str)
 {
@@ -20,7 +20,7 @@ char *_strdup(char *str)
 	str_size = string_length(str);
 	copy = (char *)malloc(sizeof(char) * str_size + 1);
 	if (copy == NULL)
-		return ((char*)NULL);
+		return (NULL);
 	/* copy string */
 	copy_offset = copy;
 	while (*str)
