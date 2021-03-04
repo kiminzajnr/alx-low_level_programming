@@ -15,11 +15,11 @@ char *_strdup(char *str)
 	int str_size, i;
 	char *copy;
 
+	if (str == NULL)
+		return (NULL);
 	/* allocating memory for the copy */
 	str_size = string_length(str);
 	copy = (char *)malloc(sizeof(char) * str_size + 1);
-	if (str == NULL)
-		return (NULL);
 	if (copy == NULL)
 		return (NULL);
 	/* copy string */
