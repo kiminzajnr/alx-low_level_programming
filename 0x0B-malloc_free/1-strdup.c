@@ -12,24 +12,24 @@
  */
 char *_strdup(char *str)
 {
-	int str_size;
-	static char *copy;
-	char *copy_offset;
+	int str_size, i;
+	char *copy;
 
 	/* allocating memory for the copy */
 	str_size = string_length(str);
 	copy = (char *)malloc(sizeof(char) * str_size + 1);
+	if (str == NULL)
+		return (NULL);
 	if (copy == NULL)
 		return (NULL);
 	/* copy string */
-	copy_offset = copy;
-	while (*str)
+	i = 0;
+	while (str[i] != '\0')
 	{
-		*copy_offset = *str;
-		copy_offset++;
-		str++;
+		copy[i] = str[i];
+		i++;
 	}
-	*copy_offset = '\0';
+	copy[i] = '\0';
 	return (copy);
 }
 /**
