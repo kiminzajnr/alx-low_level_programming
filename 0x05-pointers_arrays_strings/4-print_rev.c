@@ -10,8 +10,7 @@ void print_rev(char *s)
 	int i;
 
 	i = string_length(s);
-
-	while (i > 0 && i != '\0')
+	while (i >= 0)
 	{
 		_putchar(s[i]);
 		i--;
