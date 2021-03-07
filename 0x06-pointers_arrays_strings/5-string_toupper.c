@@ -9,7 +9,7 @@ char *string_toupper(char *str)
 {
 	int i;
 
-	for (i = 0; i <= string_length(str); i++)
+	for (i = 0; str[i] != '\0'; i++)
 	{
 		if (str[i] >= 97 && str[i] <= 122)
 		{
@@ -17,20 +17,4 @@ char *string_toupper(char *str)
 		}
 	}
 	return (str);
-}
-
-/**
-  * string_length - finds the length of a string.
-  * Return: length of c.
-  * @pointer: pointer.
-  */
-int string_length(char *pointer)
-{
-	int c = 0;
-
-	while (*(pointer + c) != '\0')
-	{
-		c++;
-	}
-	return (c);
 }
