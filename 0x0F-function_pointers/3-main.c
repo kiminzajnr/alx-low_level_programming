@@ -1,4 +1,4 @@
-include "3-calc.h"
+#include "3-calc.h"
 
 /**
   * main - program entry.
@@ -6,9 +6,10 @@ include "3-calc.h"
   * @argv: argument vector
   * Return: 0
   */
-int main(argc, *argv[])
+int main(int argc, char *argv[])
 {
 	int a = 0, b = 0, result = 0;
+	char s;
 
 	if (argc != 4)
 	{
