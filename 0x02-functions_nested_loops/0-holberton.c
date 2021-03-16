@@ -7,11 +7,11 @@
 int main(void)
 {
 	char *holberton = "Holberton";
-	int i;
 
-	for (i = 0; holberton[i] != '\0'; i++)
+	while (*holberton)
 	{
-		_putchar(holberton[i]);
+		_putchar(*holberton);
+		holberton++;
 	}
 	_putchar('\n');
 	return (0);
