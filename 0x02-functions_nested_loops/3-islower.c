@@ -1,9 +1,9 @@
 #include "holberton.h"
 
 /**
- * _islower - check the code for Holberton School students.
+ * _islower - checks for lowercase characters.
  *
- * @c: parameter
+ * @c: character to be checked
  * Return: Always 0.
  */
 
