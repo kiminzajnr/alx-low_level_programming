@@ -18,9 +18,24 @@ list_t *add_node(list_t **head, const char *str)
 	if (newNode == NULL)
 		return (NULL);
 	newNode->str = strdup(str);
-	newNode->len = strlen(str);
+	newNode->len = string_length(str);
 	newNode->next = *head;
 	*head = newNode;
 
 	return (*head);
+}
+/**
+  * string_length - finds the length of a string.
+  * Return: length of c.
+  * @pointer: pointer.
+  */
+int string_length(const char *pointer)
+{
+	int c = 0;
+
+	while (*(pointer + c) != '\0')
+	{
+		c++;
+	}
+	return (c);
 }
