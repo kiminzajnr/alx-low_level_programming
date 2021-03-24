@@ -11,7 +11,7 @@
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
 	unsigned int i;
-	listint_t *temp;
+	listint_t *temp, *next;
 
 	/* if linked list is empty */
 	if (*head == NULL)
@@ -32,7 +32,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	/* if index is greater than the number of nodes */
 	if (temp == NULL || temp->next == NULL)
 		return (-1);
-	listint_t *next = temp->next->next;
+	next = temp->next->next;
 
 	free(temp->next);
 	temp->next = next;
