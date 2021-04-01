@@ -19,12 +19,14 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n"), exit(97);
 	fd1 = open(argv[1], O_RDONLY, 0);
 	if (fd1 == -1)
-		dprintf(STDERR_FILENO, "Error: Can't read from %s\n", argv[1]), exit(98);
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		exit(98);
+	}
 	fd2 = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
 	if (fd2 == -1)
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]), exit(99);
-	chars_read = read(fd1, buf, 1024);
-	if (chars_read > 0)
+	while ((chars_read = read(fd1, buf, 1024)) > 0)
 	{
 		chars_written = write(fd2, buf, chars_read);
 		if (chars_written != chars_read)
