@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 	fd1 = open(argv[1], O_RDONLY, 0);
 	if (fd1 == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from %s\n", argv[1]);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
 	fd2 = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]), exit(99);
 	}
 	if (chars_read == -1)
-		dprintf(STDERR_FILENO, "Can't read from %s\n", argv[1]), exit(98);
+		dprintf(STDERR_FILENO, "Can't read from file %s\n", argv[1]), exit(98);
 	file_closed = close(fd1);
 	if (file_closed != 0)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd1), exit(100);
