@@ -14,7 +14,7 @@ unsigned long int key_index(const unsigned char *key, unsigned long int size)
 	while (key && key[count])
 	{
 		index = hash_djb2(key) % size;
-		count++;
+		++count;
 	}
 	return (index);
 }
