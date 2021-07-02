@@ -1,3 +1,5 @@
+PHONY: all
+
 CC=gcc
 
 SRC:=$(wildcard *.c)
