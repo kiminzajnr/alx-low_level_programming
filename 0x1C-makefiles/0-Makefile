@@ -1,0 +1,4 @@
+all: build_executable
+
+build_executable:
+	gcc main.c holberton.c -o holberton
